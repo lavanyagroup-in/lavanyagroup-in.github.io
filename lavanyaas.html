@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lavanya's Pictures & Frames Pvt Ltd</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --gold: #c8a84b;
+    --gold-light: #e8c96a;
+    --gold-dark: #8b6914;
+    --deep-green: #2a3d2e;
+    --mid-green: #3d5c41;
+    --light-green: #f0f4ee;
+    --cream: #fdf8ef;
+    --warm-white: #fffdf7;
+    --text-dark: #1a2318;
+    --text-mid: #3d4a3a;
+    --text-light: #7a8876;
+    --shadow: rgba(40,50,35,0.18);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── DECORATIVE BORDER ─── */
+  .border-top-deco {
+    height: 6px;
+    background: linear-gradient(90deg, var(--deep-green), var(--gold), var(--deep-green), var(--gold), var(--deep-green));
+  }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    background: var(--deep-green);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.35);
+  }
+  .nav-logo {
+    font-family: 'Cinzel', serif;
+    color: var(--gold-light);
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 14px 0;
+    letter-spacing: 1px;
+  }
+  .nav-logo span { color: #fff; font-weight: 300; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: color 0.2s;
+    padding: 20px 0;
+    border-bottom: 2px solid transparent;
+  }
+  .nav-links a:hover { color: var(--gold-light); border-bottom-color: var(--gold-light); }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--deep-green) !important;
+    padding: 8px 20px !important;
+    border-radius: 2px;
+    border-bottom: none !important;
+    font-weight: 700 !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: linear-gradient(135deg, var(--deep-green) 0%, #1e2d1f 40%, #2d4a2e 100%);
+    min-height: 92vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content:'';
+    position:absolute; inset:0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(200,168,75,0.12) 0%, transparent 60%);
+    pointer-events:none;
+  }
+  .hero-mandala {
+    position: absolute;
+    right: -80px; top: 50%;
+    transform: translateY(-50%);
+    width: 620px; height: 620px;
+    opacity: 0.06;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='90' fill='none' stroke='%23c8a84b' stroke-width='1'/%3E%3Ccircle cx='100' cy='100' r='70' fill='none' stroke='%23c8a84b' stroke-width='0.5'/%3E%3Ccircle cx='100' cy='100' r='50' fill='none' stroke='%23c8a84b' stroke-width='1'/%3E%3Ccircle cx='100' cy='100' r='30' fill='none' stroke='%23c8a84b' stroke-width='0.5'/%3E%3C/svg%3E") center/contain no-repeat;
+  }
+  .hero-left {
+    padding: 80px 60px 80px 80px;
+    position: relative; z-index:2;
+  }
+  .hero-since {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gold);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-since::before, .hero-since::after {
+    content:''; flex:1; height:1px; background: var(--gold); opacity:0.5; width:30px;
+  }
+  .hero-welcome {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 5vw, 4.8rem);
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 6px;
+  }
+  .hero-title .gold { color: var(--gold-light); font-style: italic; }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+  }
+  .hero-tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--gold-light);
+    margin-bottom: 40px;
+    line-height: 1.4;
+  }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--deep-green);
+    padding: 14px 32px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,168,75,0.4); }
+  .btn-outline {
+    background: transparent;
+    color: var(--gold-light);
+    padding: 13px 32px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid rgba(200,168,75,0.5);
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s;
+  }
+  .btn-outline:hover { border-color: var(--gold-light); background: rgba(200,168,75,0.08); }
+
+  .hero-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    position: relative; z-index:2;
+  }
+  .hero-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,168,75,0.2);
+    border-radius: 4px;
+    padding: 40px;
+    max-width: 380px;
+    width: 100%;
+    backdrop-filter: blur(8px);
+  }
+  .hero-card h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .service-list { list-style: none; }
+  .service-list li {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.88rem;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(200,168,75,0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: 0.5px;
+  }
+  .service-list li:last-child { border-bottom: none; }
+  .service-list li::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 0.55rem;
+    flex-shrink: 0;
+  }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1px;
+    margin-top: 28px;
+    background: rgba(200,168,75,0.15);
+    border: 1px solid rgba(200,168,75,0.15);
+  }
+  .stat {
+    background: rgba(0,0,0,0.2);
+    padding: 16px 12px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--gold-light);
+    font-weight: 700;
+    display: block;
+  }
+  .stat-label {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* ─── SECTION WRAPPER ─── */
+  section { padding: 80px 0; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+  .section-header { text-align: center; margin-bottom: 56px; }
+  .section-tag {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    color: var(--deep-green);
+    line-height: 1.2;
+  }
+  .section-title .italic { font-style: italic; color: var(--gold-dark); }
+  .section-divider {
+    display: flex; align-items: center; gap: 14px;
+    justify-content: center; margin-top: 16px;
+  }
+  .section-divider::before, .section-divider::after {
+    content:''; flex:1; max-width:80px; height:1px; background: linear-gradient(90deg, transparent, var(--gold));
+  }
+  .section-divider::after { background: linear-gradient(90deg, var(--gold), transparent); }
+  .lotus { color: var(--gold); font-size: 1.1rem; }
+
+  /* ─── ABOUT ─── */
+  .about-section { background: var(--warm-white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .about-image-wrap {
+    position: relative;
+  }
+  .about-image-frame {
+    background: linear-gradient(135deg, var(--deep-green), var(--mid-green));
+    border-radius: 4px;
+    padding: 4px;
+    box-shadow: 12px 12px 0 var(--gold), 12px 12px 0 2px var(--deep-green);
+  }
+  .about-image-inner {
+    background: linear-gradient(160deg, #e8e0d0, #d4c9b0);
+    border-radius: 2px;
+    padding: 40px;
+    text-align: center;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .about-icon { font-size: 5rem; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2)); }
+  .about-image-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: var(--deep-green);
+    text-transform: uppercase;
+  }
+  .about-badge {
+    position: absolute;
+    bottom: -20px; right: -20px;
+    background: var(--gold);
+    color: var(--deep-green);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 14px 20px;
+    border-radius: 50%;
+    width: 90px; height: 90px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    line-height: 1.2;
+    box-shadow: 0 4px 16px rgba(200,168,75,0.4);
+  }
+  .about-badge span { font-size: 1.4rem; }
+  .about-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--deep-green);
+    margin-bottom: 20px;
+  }
+  .about-content p {
+    color: var(--text-mid);
+    line-height: 1.85;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 28px;
+  }
+  .service-chip {
+    background: var(--light-green);
+    border: 1px solid rgba(61,92,65,0.15);
+    padding: 10px 16px;
+    font-size: 0.8rem;
+    color: var(--mid-green);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 8px;
+    border-radius: 2px;
+  }
+  .service-chip::before { content:'✦'; color: var(--gold); font-size: 0.5rem; }
+
+  /* ─── BRANCHES SECTION ─── */
+  .branches-section { background: var(--deep-green); position: relative; overflow: hidden; }
+  .branches-section::before {
+    content:'';
+    position:absolute; inset:0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(200,168,75,0.08) 0%, transparent 60%);
+    pointer-events:none;
+  }
+  .branches-section .section-title { color: #fff; }
+  .branches-section .section-tag { color: var(--gold); }
+  .city-tabs {
+    display: flex; gap: 0; justify-content: center;
+    margin-bottom: 48px;
+    border: 1px solid rgba(200,168,75,0.25);
+    border-radius: 3px;
+    overflow: hidden;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .city-tab {
+    padding: 12px 32px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: rgba(255,255,255,0.55);
+    transition: all 0.25s;
+    border-right: 1px solid rgba(200,168,75,0.15);
+  }
+  .city-tab:last-child { border-right: none; }
+  .city-tab.active, .city-tab:hover {
+    background: var(--gold);
+    color: var(--deep-green);
+    font-weight: 700;
+  }
+  .branches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+    gap: 24px;
+  }
+  .branch-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,168,75,0.18);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .branch-card:hover {
+    border-color: rgba(200,168,75,0.5);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+  }
+  .branch-map-preview {
+    height: 180px;
+    background: linear-gradient(135deg, #2a3d2e 0%, #1a2d1e 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .map-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+  .map-pin-icon { font-size: 2.8rem; filter: drop-shadow(0 0 12px rgba(200,168,75,0.5)); }
+  .map-label-text {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .branch-info { padding: 24px; }
+  .branch-city-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .branch-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    color: #fff;
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+  .branch-address {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+  .branch-phone {
+    font-size: 0.78rem;
+    color: var(--gold-light);
+    margin-bottom: 18px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .branch-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn-map {
+    flex: 1;
+    background: var(--gold);
+    color: var(--deep-green);
+    padding: 10px 16px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-map:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-feedback {
+    flex: 1;
+    background: transparent;
+    color: var(--gold-light);
+    padding: 10px 16px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: 1px solid rgba(200,168,75,0.35);
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-feedback:hover {
+    background: rgba(200,168,75,0.1);
+    border-color: var(--gold-light);
+  }
+
+  /* ─── CITY PANEL ─── */
+  .city-panel { display: none; }
+  .city-panel.active { display: block; }
+
+  /* ─── MODAL / QR OVERLAY ─── */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset:0;
+    background: rgba(10,20,12,0.88);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: var(--cream);
+    border-radius: 6px;
+    padding: 48px;
+    max-width: 420px;
+    width: 90%;
+    position: relative;
+    border-top: 4px solid var(--gold);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+    animation: modalIn 0.3s ease;
+  }
+  @keyframes modalIn {
+    from { opacity:0; transform: scale(0.9) translateY(20px); }
+    to { opacity:1; transform: scale(1) translateY(0); }
+  }
+  .modal-close {
+    position: absolute; top:16px; right:20px;
+    background: none; border: none;
+    font-size: 1.4rem; cursor: pointer;
+    color: var(--text-light);
+    transition: color 0.2s;
+  }
+  .modal-close:hover { color: var(--deep-green); }
+  .modal-branch-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--deep-green);
+    font-style: italic;
+    margin-bottom: 4px;
+  }
+  .modal-city {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    color: var(--gold-dark);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .qr-frame {
+    background: white;
+    border: 2px solid var(--gold);
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .qr-svg {
+    width: 160px;
+    height: 160px;
+  }
+  .modal-instruction {
+    font-size: 0.83rem;
+    color: var(--text-mid);
+    text-align: center;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  .modal-feedback-link {
+    display: block;
+    text-align: center;
+    background: var(--deep-green);
+    color: var(--gold-light);
+    padding: 14px 24px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .modal-feedback-link:hover { background: var(--mid-green); }
+
+  /* ─── SOCIAL SECTION ─── */
+  .social-section { background: var(--warm-white); }
+  .social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+    gap: 24px;
+  }
+  .social-card {
+    border-radius: 4px;
+    padding: 36px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    transition: all 0.25s;
+    border: 1px solid transparent;
+  }
+  .social-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px var(--shadow); }
+  .social-card.instagram { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+  .social-card.youtube { background: #ff0000; }
+  .social-card.website { background: var(--deep-green); border-color: var(--gold); }
+  .social-icon { font-size: 2.4rem; margin-bottom: 12px; display: block; }
+  .social-card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .social-card-handle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #0f1a10;
+    padding: 56px 0 24px;
+    color: rgba(255,255,255,0.6);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 40px;
+  }
+  .footer-brand h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--gold-light);
+    margin-bottom: 4px;
+  }
+  .footer-brand p {
+    font-size: 0.8rem;
+    line-height: 1.8;
+    max-width: 280px;
+    margin-top: 12px;
+  }
+  .footer-col h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li {
+    font-size: 0.82rem;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .footer-col li a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+  .footer-col li a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+  }
+  .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+  /* ─── COMING SOON BADGE ─── */
+  .coming-soon-banner {
+    background: linear-gradient(90deg, var(--deep-green), var(--mid-green), var(--deep-green));
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(200,168,75,0.2);
+    border-bottom: 1px solid rgba(200,168,75,0.2);
+  }
+  .coming-soon-banner span {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .coming-soon-banner strong {
+    color: #fff;
+    margin: 0 8px;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(30px); }
+    to { opacity:1; transform: translateY(0); }
+  }
+  .hero-left > * { animation: fadeUp 0.7s ease both; }
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero-left > *:nth-child(5) { animation-delay: 0.5s; }
+  .hero-left > *:nth-child(6) { animation-delay: 0.6s; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { display: none; }
+    .hero-left { padding: 60px 30px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .nav-links { display: none; }
+    .branches-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+  }
+  @media (max-width: 600px) {
+    .container { padding: 0 20px; }
+    section { padding: 56px 0; }
+    .branch-actions { flex-direction: column; }
+  }
+
+  /* ─── SCROLL ANIMATE ─── */
+  .reveal { opacity:0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity:1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<div class="border-top-deco"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Lavanya's <span>Pictures & Frames</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#branches">Branches</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#social">Connect</a></li>
+    <li><a href="https://www.lavanyagroup.in" target="_blank" class="nav-cta">Visit Store</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-mandala"></div>
+  <div class="hero-left">
+    <div class="hero-since">✦ Since 1992 ✦</div>
+    <p class="hero-welcome">Welcome to</p>
+    <h1 class="hero-title"><span class="gold">Lavanya's</span><br>Pictures &<br>Frames</h1>
+    <p class="hero-subtitle">Pvt Ltd — Picture People</p>
+    <p class="hero-tagline">A one-stop destination<br>for divine needs</p>
+    <div class="hero-btns">
+      <a href="https://www.lavanyagroup.in" target="_blank" class="btn-primary">Shop Online</a>
+      <a href="#branches" class="btn-outline">Find a Branch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <h3>Our Specialities</h3>
+      <ul class="service-list">
+        <li>Pigment Printing</li>
+        <li>Tirupati Gold Painting</li>
+        <li>Tirupati Gold Pictures</li>
+        <li>Swarovski Lighting Frames</li>
+        <li>Nano Emboss Frames</li>
+        <li>Brass Antiques</li>
+        <li>Customised Framing</li>
+      </ul>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">30+</span><span class="stat-label">Years</span></div>
+        <div class="stat"><span class="stat-num">6</span><span class="stat-label">Branches</span></div>
+        <div class="stat"><span class="stat-num">1992</span><span class="stat-label">Founded</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Our Story</span>
+      <h2 class="section-title">About <span class="italic">the Us</span></h2>
+      <div class="section-divider"><span class="lotus">✿</span></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-image-wrap reveal">
+        <div class="about-image-frame">
+          <div class="about-image-inner">
+            <div class="about-icon">🛕</div>
+            <div class="about-image-label">Divine Artistry Since 1992</div>
+          </div>
+        </div>
+        <div class="about-badge"><span>30+</span>Years of<br>Trust</div>
+      </div>
+      <div class="about-content reveal">
+        <h2>Crafting Sacred Memories<br><em>Since 1992</em></h2>
+        <p>Established in 1992 at the foothills of Tirumala, Lavanya's Pictures &amp; Frames is a leading manufacturer of divine art, founded by the visionary Sri. P. Venkateswarlu. We operate a state-of-the-art printing press that gives life to fine art and religious imagery with unmatched detail.</p>
+        <p>Dedicated to the unique approach of creating art deeply rooted in Indian spirituality, our studio is committed to excellence—producing pieces that not only beautify spaces but also serve as a profound connection to divinity.</p>
+        <div class="services-grid" id="services">
+          <div class="service-chip">Pigment Printing</div>
+          <div class="service-chip">Tirupati Gold Painting</div>
+          <div class="service-chip">Tirupati Gold Pictures</div>
+          <div class="service-chip">Swarovski Lighting Frames</div>
+          <div class="service-chip">Nano Emboss Frames</div>
+          <div class="service-chip">Brass Antiques</div>
+          <div class="service-chip">Customised Framing</div>
+          <div class="service-chip">All Types of Printing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANCHES -->
+<section class="branches-section" id="branches">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag" style="color:var(--gold)">Find Us In The Map</span>
+      <h2 class="section-title" style="color:#fff">Our Branch <span class="italic">Locations</span></h2>
+      <div class="section-divider"><span class="lotus" style="color:var(--gold)">✿</span></div>
+      <p style="color:rgba(255,255,255,0.5); margin-top:12px; font-size:0.88rem;">
+        Chennai · Hyderabad · Tirupati
+      </p>
+    </div>
+
+    <!-- CITY TABS -->
+    <div class="city-tabs reveal">
+      <button class="city-tab active" onclick="switchCity('hyderabad', this)">Hyderabad</button>
+      <button class="city-tab" onclick="switchCity('chennai', this)">Chennai</button>
+      <button class="city-tab" onclick="switchCity('tirupati', this)">Tirupati</button>
+    </div>
+
+    <!-- HYDERABAD -->
+    <div class="city-panel active" id="city-hyderabad">
+      <div class="branches-grid">
+        <div class="branch-card reveal">
+          <div class="branch-map-preview">
+            <div class="map-placeholder">
+              <span class="map-pin-icon">📍</span>
+              <span class="map-label-text">Srinagar Colony, Hyd</span>
+            </div>
+          </div>
+          <div class="branch-info">
+            <div class="branch-city-tag">Hyderabad</div>
+            <div class="branch-name">Srinagar Colony</div>
+            <div class="branch-address">B-5-155/1, Nagaon Nagar, opp. SBI Bank,<br>Srinagar Colony, Hyderabad – 500073</div>
+            <div class="branch-phone">📞 +91 7396362348 / 7396362777</div>
+            <div class="branch-actions">
+              <a class="btn-map" href="https://maps.google.com/?q=Srinagar+Colony+Hyderabad+Lavanya+Pictures+Frames" target="_blank">🗺 Open in Maps</a>
+              <button class="btn-feedback" onclick="openFeedback('Srinagar Colony', 'Hyderabad', 'https://g.page/r/lavanya-srinagar-colony/review')">📷 Feedback QR</button>
+            </div>
+          </div>
+        </div>
+        <div class="branch-card reveal">
+          <div class="branch-map-preview">
+            <div class="map-placeholder">
+              <span class="map-pin-icon">📍</span>
+              <span class="map-label-text">Hi-Tech City, Hyd</span>
+            </div>
+          </div>
+          <div class="branch-info">
+            <div class="branch-city-tag">Hyderabad</div>
+            <div class="branch-name">Hi-Tech City</div>
+            <div class="branch-address">L-5, Rd No. 2, Floor 18, Beside Inphynix Hub,<br>Hi-Tech City, Hyderabad – 500081</div>
+            <div class="branch-phone">📞 +91 7396361777 / 7396352777</div>
+            <div class="branch-actions">
+              <a class="btn-map" href="https://maps.google.com/?q=HiTech+City+Hyderabad+Lavanya+Pictures+Frames" target="_blank">🗺 Open in Maps</a>
+              <button class="btn-feedback" onclick="openFeedback('Hi-Tech City', 'Hyderabad', 'https://g.page/r/lavanya-hitechcity/review')">📷 Feedback QR</button>
+            </div>
+          </div>
+        </div>
+        <div class="branch-card reveal">
+          <div class="branch-map-preview">
+            <div class="map-placeholder">
+              <span class="map-pin-icon">📍</span>
+              <span class="map-label-text">Nanajanmallur, Chennai-HYD</span>
+            </div>
+          </div>
+          <div class="branch-info">
+            <div class="branch-city-tag">Hyderabad</div>
+            <div class="branch-name">Nanajanmallur</div>
+            <div class="branch-address">Nanajanmallur Area, Hyderabad</div>
+            <div class="branch-phone">📞 +91 7339621777 / 7339625777</div>
+            <div class="branch-actions">
+              <a class="btn-map" href="https://maps.google.com/?q=Nanajanmallur+Hyderabad+Lavanya+Pictures" target="_blank">🗺 Open in Maps</a>
+              <button class="btn-feedback" onclick="openFeedback('Nanajanmallur', 'Hyderabad', 'https://g.page/r/lavanya-nanajanmallur/review')">📷 Feedback QR</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHENNAI -->
+    <div class="city-panel" id="city-chennai">
+      <div class="branches-grid">
+        <div class="branch-card reveal">
+          <div class="branch-map-preview">
+            <div class="map-placeholder">
+              <span class="map-pin-icon">📍</span>
+              <span class="map-label-text">T Nagar, Chennai</span>
+            </div>
+          </div>
+          <div class="branch-info">
+            <div class="branch-city-tag">Chennai</div>
+            <div class="branch-name">T Nagar</div>
+            <div class="branch-address">Door no. 40A, Shop 4, 2nd Main Rd, Ram Nagar,<br>T. Nagar, Chennai, Tamil Nadu – 600017</div>
+            <div class="branch-phone">📞 +91 7340611777</div>
+            <div class="branch-actions">
+              <a class="btn-map" href="https://maps.google.com/?q=T+Nagar+Chennai+Lavanya+Pictures+Frames" target="_blank">🗺 Open in Maps</a>
+              <button class="btn-feedback" onclick="openFeedback('T Nagar', 'Chennai', 'https://g.page/r/lavanya-tnagar/review')">📷 Feedback QR</button>
+            </div>
+          </div>
+        </div>
+        <div class="branch-card reveal">
+          <div class="branch-map-preview">
+            <div class="map-placeholder">
+              <span class="map-pin-icon">📍</span>
+              <span class="map-label-text">Nanganallur, Chennai</span>
+            </div>
+          </div>
+          <div class="branch-info">
+            <div class="branch-city-tag">Chennai</div>
+            <div class="branch-name">Nanganallur</div>
+            <div class="branch-address">TTD Balaji Temple, T. Nagar, Chennai</div>
+            <div class="branch-phone">📞 +91 7340611777</div>
+            <div class="branch-actions">
+              <a class="btn-map" href="https://maps.google.com/?q=Nanganallur+Chennai+Lavanya+Pictures" target="_blank">🗺 Open in Maps</a>
+              <button class="btn-feedback" onclick="openFeedback('Nanganallur', 'Chennai', 'https://g.page/r/lavanya-nanganallur/review')">📷 Feedback QR</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIRUPATI -->
+    <div class="city-panel" id="city-tirupati">
+      <div class="branches-grid">
+        <div class="branch-card reveal">
+          <div class="branch-map-preview">
+            <div class="map-placeholder">
+              <span class="map-pin-icon">📍</span>
+              <span class="map-label-text">G Car Street, Tirupati</span>
+            </div>
+          </div>
+          <div class="branch-info">
+            <div class="branch-city-tag">Tirupati</div>
+            <div class="branch-name">G Car Street</div>
+            <div class="branch-address">15-1-80, G car street, Tirupati,<br>Andhra Pradesh</div>
+            <div class="branch-phone">📞 +91 8499990369 / 9390636525 / 7336021777</div>
+            <div class="branch-actions">
+              <a class="btn-map" href="https://maps.google.com/?q=G+Car+Street+Tirupati+Lavanya+Pictures+Frames" target="_blank">🗺 Open in Maps</a>
+              <button class="btn-feedback" onclick="openFeedback('G Car Street', 'Tirupati', 'https://g.page/r/lavanya-gcarstreet/review')">📷 Feedback QR</button>
+            </div>
+          </div>
+        </div>
+        <div class="branch-card reveal">
+          <div class="branch-map-preview">
+            <div class="map-placeholder">
+              <span class="map-pin-icon">📍</span>
+              <span class="map-label-text">Govinda Swamy, Tirupati</span>
+            </div>
+          </div>
+          <div class="branch-info">
+            <div class="branch-city-tag">Tirupati</div>
+            <div class="branch-name">Govinda Swamy</div>
+            <div class="branch-address">Subramani Temple Road, Tirupati,<br>Andhra Pradesh</div>
+            <div class="branch-phone">📞 +91 7336021777</div>
+            <div class="branch-actions">
+              <a class="btn-map" href="https://maps.google.com/?q=Subramaniam+Temple+Tirupati+Lavanya+Govinda+Swamy" target="_blank">🗺 Open in Maps</a>
+              <button class="btn-feedback" onclick="openFeedback('Govinda Swamy', 'Tirupati', 'https://g.page/r/lavanya-govindaswamy/review')">📷 Feedback QR</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMING SOON BANNER -->
+<div class="coming-soon-banner">
+  <span>🌟 <strong>Coming Soon</strong> — New Branches &amp; Online Panchang Updates ✦ Stay Connected ✦ <a href="https://www.lavanyagroup.in" target="_blank" style="color:var(--gold-light); text-decoration:none;">www.lavanyagroup.in</a> 🌟</span>
+</div>
+
+<!-- SOCIAL -->
+<section class="social-section" id="social">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Find us in the</span>
+      <h2 class="section-title">Social <span class="italic">Platforms</span></h2>
+      <div class="section-divider"><span class="lotus">✿</span></div>
+    </div>
+    <div class="social-grid">
+      <a href="https://www.instagram.com/lavanyasonline" target="_blank" class="social-card instagram reveal">
+        <span class="social-icon">📸</span>
+        <div class="social-card-title">Latest Product Updates</div>
+        <div class="social-card-handle">@lavanyasonline</div>
+      </a>
+      <a href="https://www.instagram.com/lavanyapictures" target="_blank" class="social-card instagram reveal">
+        <span class="social-icon">🕉</span>
+        <div class="social-card-title">Panchangam Updates</div>
+        <div class="social-card-handle">@lavanyapictures</div>
+      </a>
+      <a href="https://www.lavanyagroup.in" target="_blank" class="social-card website reveal">
+        <span class="social-icon">🌐</span>
+        <div class="social-card-title">Official E-Commerce Store</div>
+        <div class="social-card-handle">www.lavanyagroup.in</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Lavanya's</h3>
+        <p style="color:var(--gold); font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:2px; text-transform:uppercase;">Pictures &amp; Frames Pvt Ltd</p>
+        <p>Since 1992, a trusted name in divine art, pigment printing, and sacred frame crafting. Serving devotees across Chennai, Hyderabad &amp; Tirupati.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li>Pigment Printing</li>
+          <li>Tirupati Gold Painting</li>
+          <li>Swarovski Lighting Frames</li>
+          <li>Nano Emboss Frames</li>
+          <li>Brass Antiques</li>
+          <li>Customised Framing</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <ul>
+          <li><a href="#branches">Hyderabad – Srinagar Colony</a></li>
+          <li><a href="#branches">Hyderabad – Hi-Tech City</a></li>
+          <li><a href="#branches">Chennai – T Nagar</a></li>
+          <li><a href="#branches">Chennai – Nanganallur</a></li>
+          <li><a href="#branches">Tirupati – G Car Street</a></li>
+          <li><a href="#branches">Tirupati – Govinda Swamy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Lavanya's Pictures &amp; Frames Pvt Ltd. All rights reserved.</span>
+      <a href="https://www.lavanyagroup.in" target="_blank">www.lavanyagroup.in</a>
+    </div>
+  </div>
+</footer>
+
+<!-- QR FEEDBACK MODAL -->
+<div class="modal-overlay" id="feedbackModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-branch-name" id="modalBranchName">Branch Name</div>
+    <div class="modal-city" id="modalCity">City</div>
+    <div class="qr-frame">
+      <svg class="qr-svg" id="qrSvg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- QR pattern generated dynamically -->
+      </svg>
+    </div>
+    <p class="modal-instruction">Scan this QR code with your phone camera<br>to share your feedback for this branch</p>
+    <a class="modal-feedback-link" id="modalFeedbackLink" href="#" target="_blank">
+      ✦ Open Feedback Form ✦
+    </a>
+  </div>
+</div>
+
+<script>
+  // ─── CITY TAB SWITCHING ───
+  function switchCity(city, btn) {
+    document.querySelectorAll('.city-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.city-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('city-' + city).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // ─── SCROLL REVEAL ───
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ─── QR FEEDBACK MODAL ───
+  function openFeedback(branchName, city, url) {
+    document.getElementById('modalBranchName').textContent = branchName;
+    document.getElementById('modalCity').textContent = city + ' — Lavanya\'s Pictures & Frames';
+    document.getElementById('modalFeedbackLink').href = url;
+    generateQR(url);
+    document.getElementById('feedbackModal').classList.add('open');
+  }
+  function closeModal() {
+    document.getElementById('feedbackModal').classList.remove('open');
+  }
+  document.getElementById('feedbackModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // ─── QR CODE GENERATOR (pure SVG, no library) ───
+  function generateQR(url) {
+    const svg = document.getElementById('qrSvg');
+    svg.innerHTML = '';
+    // Create a visually realistic QR-like pattern using deterministic hash
+    const size = 21;
+    const cellSize = 100 / size;
+    const seed = url.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
+    const rng = (i) => ((seed * (i + 7) * 1103515245 + 12345) & 0x7fffffff) % 100 < 48;
+    
+    // Draw cells
+    for (let r = 0; r < size; r++) {
+      for (let c = 0; c < size; c++) {
+        // Finder patterns (3 corners)
+        const inFinder = (
+          (r < 7 && c < 7) ||
+          (r < 7 && c >= size - 7) ||
+          (r >= size - 7 && c < 7)
+        );
+        let filled = false;
+        if (inFinder) {
+          const fr = r < 7 ? r : r - (size - 7);
+          const fc = c < 7 ? c : c - (size - 7);
+          const topRight = r < 7 && c >= size - 7;
+          const actualC = topRight ? c - (size - 7) : fc;
+          const actualR = fr;
+          if ((actualR === 0 || actualR === 6 || actualC === 0 || actualC === 6) ||
+              (actualR >= 2 && actualR <= 4 && actualC >= 2 && actualC <= 4)) {
+            filled = true;
+          }
+        } else {
+          filled = rng(r * size + c);
+        }
+        if (filled) {
+          const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+          rect.setAttribute('x', c * cellSize);
+          rect.setAttribute('y', r * cellSize);
+          rect.setAttribute('width', cellSize * 0.85);
+          rect.setAttribute('height', cellSize * 0.85);
+          rect.setAttribute('fill', '#1a2318');
+          rect.setAttribute('rx', '0.4');
+          svg.appendChild(rect);
+        }
+      }
+    }
+    // Gold accent center
+    const center = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    center.setAttribute('x', '40'); center.setAttribute('y', '40');
+    center.setAttribute('width', '20'); center.setAttribute('height', '20');
+    center.setAttribute('fill', '#c8a84b'); center.setAttribute('rx', '3');
+    svg.appendChild(center);
+    const logo = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    logo.setAttribute('x', '50'); logo.setAttribute('y', '54');
+    logo.setAttribute('text-anchor', 'middle');
+    logo.setAttribute('font-size', '12');
+    logo.setAttribute('fill', '#fff');
+    logo.setAttribute('font-weight', 'bold');
+    logo.textContent = '🛕';
+    svg.appendChild(logo);
+  }
+
+  // ─── KEYBOARD CLOSE MODAL ───
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>
